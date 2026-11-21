@@ -1,30 +1,22 @@
-import pandas as pd
-import matplotlib.pyplot as plt
+# Python Data Analysis - Restaurant Tips
 
-# Load public dataset: Restaurant tips
-url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv"
-df = pd.read_csv(url)
+Exploratory Data Analysis in Python using Pandas and Matplotlib.
 
-print("Shape:", df.shape)
-print(df.head())
-print(df.describe())
-print(df.isnull().sum())
+Dataset: Public restaurant tips dataset (244 rows) - total bill, tip, sex, smoker, day, time, size.
 
-# Q1: Does total bill affect tip?
-print("\nAverage tip by day:")
-print(df.groupby("day")["tip"].mean())
+### Questions Answered
+1. Does total bill affect tip?
+2. Do smokers tip differently than non-smokers?
+3. Do people tip more at lunch or dinner?
 
-# Q2: Do smokers tip differently?
-print("\nAverage tip by smoker:")
-print(df.groupby("smoker")["tip"].mean())
+### Key Skills Shown
+- Data cleaning and inspection with Pandas
+- GroupBy analysis
+- Data visualization with Matplotlib
+- Writing clear insights from data
 
-# Q3: Tip by time (Lunch vs Dinner)
-print("\nAverage tip by time:")
-print(df.groupby("time")["tip"].mean())
+### How to Run
+pip install pandas matplotlib
+python analysis.py
 
-# Simple chart
-df.groupby("day")["tip"].mean().plot(kind="bar", title="Average Tip by Day")
-plt.ylabel("Average Tip ($)")
-plt.tight_layout()
-plt.savefig("avg_tip_by_day.png")
-print("\nChart saved as avg_tip_by_day.png")
+Certificate: Google Data Analytics Professional Certificate - Coursera (2023)
